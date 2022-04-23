@@ -1,6 +1,8 @@
 server:
   port: 8004
 spring:
+  application:
+    name: return-service
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://baodashuai.mysql.rds.aliyuncs.com:3306/guest

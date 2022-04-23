@@ -1,6 +1,8 @@
 server:
   port: 8003
 spring:
+  application:
+    name: book-service
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://baodashuai.mysql.rds.aliyuncs.com:3306/guest

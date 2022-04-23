@@ -1,6 +1,8 @@
 server:
   port: 8002
 spring:
+  application:
+    name: borrow-service
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://baodashuai.mysql.rds.aliyuncs.com:3306/guest
