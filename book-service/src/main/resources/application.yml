@@ -8,3 +8,7 @@ spring:
     url: jdbc:mysql://baodashuai.mysql.rds.aliyuncs.com:3306/guest
     username: guest01
     password: guest@123456
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848

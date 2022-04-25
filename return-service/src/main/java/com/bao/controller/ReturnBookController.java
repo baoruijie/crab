@@ -21,10 +21,10 @@ public class ReturnBookController {
 
 
     @RequestMapping("/return/{bid}")
-    public int returnBookById(@PathVariable("bid") int bid, HttpServletRequest request){
+    public BookEntity returnBookById(@PathVariable("bid") int bid, HttpServletRequest request){
         System.out.println("还书。。。" + i++);
-        int changeLines = returnBookService.returnBookById(bid);
+        BookEntity bookEntity = returnBookService.returnBookById(bid);
 
-        return changeLines;
+        return bookEntity;
     }
 }

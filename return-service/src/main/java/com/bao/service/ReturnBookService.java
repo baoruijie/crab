@@ -1,7 +1,9 @@
 package com.bao.service;
 
 
+import com.bao.entity.BookEntity;
+
 public interface ReturnBookService {
 
-    int returnBookById(int id);
+    BookEntity returnBookById(int id);
 }

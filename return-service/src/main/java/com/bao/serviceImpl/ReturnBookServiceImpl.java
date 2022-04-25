@@ -1,21 +1,21 @@
 package com.bao.serviceImpl;
 
-import com.bao.mapper.ReturnBookMapper;
+import com.bao.entity.BookEntity;
 import com.bao.service.ReturnBookService;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
-import javax.annotation.Resource;
 
 @Service
 public class ReturnBookServiceImpl implements ReturnBookService {
 
-    @Resource
-    ReturnBookMapper returnBookMapper;
-
 
     @Override
-    public int returnBookById(int id) {
+    public BookEntity returnBookById(int id) {
 
-        return returnBookMapper.returnBookId(id);
+        RestTemplate restTemplate = new RestTemplate();
+        BookEntity book = restTemplate.getForObject("http://localhost:8001/book/return/"+id,BookEntity.class);
+
+        return book;
     }
 }
