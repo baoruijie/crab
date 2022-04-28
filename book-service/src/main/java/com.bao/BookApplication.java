@@ -1,11 +1,15 @@
 package com.bao;
 
+import com.bao.interceptor.MybatisPlusConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Import;
 
 @SpringBootApplication
+@Import(MybatisPlusConfig.class)
 public class BookApplication {
     public static void main(String[] args) {
+
         SpringApplication.run(BookApplication.class,args);
     }
 }

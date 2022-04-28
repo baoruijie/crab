@@ -8,7 +8,23 @@ spring:
     url: jdbc:mysql://baodashuai.mysql.rds.aliyuncs.com:3306/guest
     username: guest01
     password: guest@123456
-  cloud:
-    nacos:
-      discovery:
-        server-addr: localhost:8848
+#    type: com.zaxxer.hikari.HikariDataSource
+#    hikari:
+#      connection-test-query: select 1
+#      minimum-idle: 1
+#      maximum-pool-size: 20
+  main:
+    allow-bean-definition-overriding: true
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: localhost:8848
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true #开启驼峰命名。
+  mapper-locations: classpath*:/mapper/*.xml
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.log4j2.Log4j2Impl
+  mapper-locations: classpath*:/mapper/*.xml

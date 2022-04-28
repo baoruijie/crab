@@ -1,15 +1,12 @@
-package com.bao.entity;
+package com.bao.vo;
 
-import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.AllArgsConstructor;
+import com.bao.query.PageQuery;
 import lombok.Data;
 
 import java.util.Date;
 
-@TableName("book")
 @Data
-public class BookEntity {
-
+public class BookVo extends PageQuery {
     Integer id;
     String bookName;
     String bookDesc;
