@@ -11,8 +11,8 @@ import java.util.Date;
 public class BookEntity {
 
     Integer id;
-    String bookName;
-    String bookDesc;
+    String bookname;
+    String bookdesc;
     String location;
     String state;
     Date borrowtime;

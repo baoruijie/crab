@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: gateway-service
+    cloud:
+      gateway:
+        discovery:
+          locator:
+            enabled: true #开启注册中心的路由定位器
+            lower-case-service-id: true
+#        routes: #配置路由，这里是个列表
+#          - id: book1
+#            uri: lb://BOOK-SERVICE
+#            predicates: #断言，
+#              - Path = /book-service/**  #只要是访问这个路径，都路由到上面指定到服务地址。
+#            filters:
+#              - RewritePath=/book/(?<segment>.*),/$\{segment}
+#              - StripPrefix=1
+#      nacos:
+#        server-addr: localhost:8848
+eureka:
+  client:
+    service-url:
+      default-Zone: http://localhost:8761/eureka
+#  instance:
+#    hostname: localhost
+
+server:
+  port: 8099
+
+#logging:
+#  pattern:
+#    console: '%d{yyyy-MM-dd HH:mm:ss.SSS}  %highlight(%-5level) %magenta([%-15.15(%thread)])  %cyan( %-50.50(%logger{50} )) : %msg%n'
+

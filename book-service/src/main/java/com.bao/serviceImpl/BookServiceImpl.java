@@ -21,7 +21,7 @@ public class BookServiceImpl extends ServiceImpl<BookMapper, BookEntity> impleme
     @Override
     public IPage<BookEntity> queryPage(BookVo vo) {
         QueryWrapper<BookEntity> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("location","a");
+        queryWrapper.eq("location","A101");
         queryWrapper.and(QueryWrapper ->
                 QueryWrapper.like("state",vo.getState())
                         .or().like("state",vo.getState()));

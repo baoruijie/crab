@@ -1,13 +1,14 @@
 server:
   port: 8003
+
 spring:
   application:
     name: book-service
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://baodashuai.mysql.rds.aliyuncs.com:3306/guest
-    username: guest01
-    password: guest@123456
+    url: jdbc:mysql://localhost:3306/nacos
+    username: root
+    password: qnvbofnh
 #    type: com.zaxxer.hikari.HikariDataSource
 #    hikari:
 #      connection-test-query: select 1
@@ -19,12 +20,18 @@ spring:
 #    nacos:
 #      discovery:
 #        server-addr: localhost:8848
+eureka:
+  client:
+    service-url:
+      default-Zone: http://localhost:8761/eureka
+#  instance:
+#    hostname: localhost
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     map-underscore-to-camel-case: true #开启驼峰命名。
   mapper-locations: classpath*:/mapper/*.xml
-mybatis:
-  configuration:
-    log-impl: org.apache.ibatis.logging.log4j2.Log4j2Impl
-  mapper-locations: classpath*:/mapper/*.xml
+#mybatis:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.log4j2.Log4j2Impl
+#  mapper-locations: classpath*:/mapper/*.xml

@@ -34,4 +34,9 @@ public class BookController {
         return bookService.getBookInfoById(id);
     }
 
+    @RequestMapping("/book")
+    public String one(){
+        return "132352315";
+    }
+
 }

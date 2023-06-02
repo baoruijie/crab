@@ -17,7 +17,8 @@ public class JWTUtil {
 
 
     private static final String TOEKN_EXPIRED = "eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYiLCJ0eXAiOiJKV1QifQ.eyJ1c2VyTmFtZSI6IuWMheeCnCIsImV4cCI6MTY1MTcyMjEyNH0.hijTZpjZ0sN0IAW7IbbFqvKAPDIUoPQZqcvEQ2r_2no";
-    private static final String TOEKN = "eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYiLCJ0eXAiOiJKV1QifQ.eyJ1c2VyTmFtZSI6IuWMheeCnCIsImV4cCI6MTY1MTgyMjA0Nn0.h3Rij3fWE7AB-sf_OHda75pP6W7P_mVuVKC3nVGwyLc";
+//    private static final String TOEKN = "eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYiLCJ0eXAiOiJKV1QifQ.eyJ1c2VyTmFtZSI6IuWMheeCnCIsImV4cCI6MTY1MTgyMjA0Nn0.h3Rij3fWE7AB-sf_OHda75pP6W7P_mVuVKC3nVGwyLc";
+    private static final String TOEKN = "eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFMyNTYiLCJ0eXAiOiJKV1QifQ.eyJ1c2VyTmFtZSI6IuWMheeCnCJ9._twqO6gLwVqTAclhN5pe3iQb3Fxgu58KAE2gzzb9tWA";
     public static void main(String[] args) {
         generatorToken("包炜");
         Map<String,Claim> map = verifyToken(TOEKN);
@@ -39,7 +40,7 @@ public class JWTUtil {
         String token = JWT.create()
                 .withHeader(header)
                 .withClaim("userName",userName)
-                .withExpiresAt(date)
+                //.withExpiresAt(date)
                 .sign(Algorithm.HMAC256(TOKEN_SECRET));
 
         System.out.println(token);
