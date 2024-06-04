@@ -11,6 +11,7 @@
         <module>return-service</module>
         <module>gateway-service</module>
         <module>eureka-server</module>
+        <module>batch</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -19,9 +20,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>springCloudAlibaba</artifactId>
+    <artifactId>crab</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>springCloudAlibaba</name>
+    <name>crab</name>
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>1.8</java.version>
@@ -73,13 +74,5 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>

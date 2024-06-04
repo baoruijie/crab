@@ -34,6 +34,15 @@ public class BookController {
         return bookService.getBookInfoById(id);
     }
 
+    @RequestMapping("/test")
+    public String test1(){
+        return "test";
+    }
+    @RequestMapping("/test/test")
+    public String test2(){
+        return "test/test";
+    }
+
     @RequestMapping("/book")
     public String one(){
         return "132352315";

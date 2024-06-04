@@ -24,14 +24,14 @@ import javax.annotation.Resource;
 
 
 @SpringBootApplication
-@EnableDiscoveryClient
+//@EnableDiscoveryClient
 @Slf4j
 public class GatewayService {
     public static void main(String[] args) {
         SpringApplication.run(GatewayService.class,args);
     }
 
-    @RestController
+//    @RestController
     class EchoController {
 
 //        @Autowired

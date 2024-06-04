@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: batch
+  main:
+    allow-circular-references: true
+server:
+  port: 8901
+
+logging:
+  level:
+    root: info #根目录
+    com:
+      bao: DEBUG  #具体包下使用的日志级别
+

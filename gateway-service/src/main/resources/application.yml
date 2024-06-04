@@ -3,29 +3,45 @@ spring:
     name: gateway-service
     cloud:
       gateway:
+        globalcors:
+          corsConfigurations:
+            '[/**]':
+              allowedOrigins: "*"
+              allowedMethods: "*"
         discovery:
           locator:
-            enabled: true #开启注册中心的路由定位器
-            lower-case-service-id: true
-#        routes: #配置路由，这里是个列表
-#          - id: book1
-#            uri: lb://BOOK-SERVICE
-#            predicates: #断言，
-#              - Path = /book-service/**  #只要是访问这个路径，都路由到上面指定到服务地址。
-#            filters:
+            enabled: false #开启注册中心的路由定位器
+#            lower-case-service-id: true
+        routes: #配置路由，这里是个列表
+          - id: book1
+            uri: lb://BOOK-SERVICE
+            predicates: #断言，
+              - Path=/service/**  #只要是访问这个路径，都路由到上面指定到服务地址。
+              - Query=service
+            filters:
 #              - RewritePath=/book/(?<segment>.*),/$\{segment}
-#              - StripPrefix=1
+              - StripPrefix=1
+          ######################################################################
+          - id: service1
+            uri: https://blog.csdn.net
+            predicates:
+              - Path=/csdn
+
+          - id: test1
+            uri: http:localhost:8003/test
+            predicates:
+              - Path=/test
 #      nacos:
 #        server-addr: localhost:8848
 eureka:
   client:
     service-url:
-      default-Zone: http://localhost:8761/eureka
-#  instance:
-#    hostname: localhost
+      default-Zone: http://127.0.0.1:8761/eureka
+  instance:
+    hostname: localhost
 
 server:
-  port: 8099
+  port: 8000
 
 #logging:
 #  pattern:
