@@ -7,7 +7,7 @@
         <module>user-service</module>
         <module>book-service</module>
         <module>borrow-service</module>
-        <module>commons-entity</module>
+        <module>commons</module>
         <module>return-service</module>
         <module>gateway-service</module>
         <module>eureka-server</module>
